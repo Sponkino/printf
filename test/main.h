@@ -1,19 +1,29 @@
-#ifndef PRINTF_H
-#define PRINTF_H
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
-#include <stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
 #include <stdlib.h>
+/**
+ * struct ch - struct ch
+ * @str: pointer to string
+ * @f: funtion pointer
+ */
+typedef struct ch
+{
+		char *str;
+			int (*f)(va_list);
+} chr_st;
+/*from struct array func*/
+int count_spec(char ch, va_list arg);
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void print_name(char *name, void (*f)(char *));
-void array_iterator(int *array, size_t size, void (*action)(int));
-int int_index(int *array, int size, int (*cmp)(int));
-int op_add(int a, int b);
-int op_sub(int a, int b);
-int op_mul(int a, int b);
-int op_div(int a, int b);
-int op_mod(int a, int b);
-int (*get_op_func(char *s))(int, int);
+int _strlen(char *c);
 
-#endif /* PRINTF_H */
+/*from specifer functions.c */
+int use_c(va_list arg);
+int use_s(va_list arg);
+int use_i(va_list arg);
+
+#endif
