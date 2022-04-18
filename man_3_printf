@@ -19,6 +19,22 @@ Format of the format string
 	The format string is a character string, enclosed within a double quote with a percentage
 	symbol directly before the string.
 
+d,s,i  The  int argument is converted to signed decimal notation.  The
+       precision, if any, gives the minimum number of digits that must
+       appear;  if  the  converted  value requires fewer digits, it is
+       padded on the left with zeros.  The  default  precision  is  1.
+       When  0  is printed with an explicit precision 0, the output is
+       empty. For the s argument the const char * argument is expected to be a pointe
+       to an array of character  type  (pointer to a string).
+
+
 	The syntax for the format string is:
 
 	"%[the format]"
+	%d:	Prints the decimal argument in the format.
+	%c:	Prints the character argument in the format.
+	%i:	Prints the integer argument in the format.
+
+Authors: Chinedu Ezeanyim and Orji Prince
+
+For bugs: see https://www.kernel.org/doc/man-pages/
