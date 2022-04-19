@@ -17,6 +17,7 @@ int print_int(va_list i);
 int print_char(va_list c);
 int print_percentage(void);
 int print_dec(va_list d);
+int _puts(char *str);
 
 /*from specifer functions.c */
 int use_c(va_list arg);
