@@ -20,6 +20,7 @@ int count_spec(char ch, va_list arg);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _strlen(char *c);
+int print_string(va_list s);
 
 /*from specifer functions.c */
 int use_c(va_list arg);
