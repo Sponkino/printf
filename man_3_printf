@@ -1,40 +1,86 @@
-_printf(3) - printf manual page
+.\" This Man_3_printf man page!!
+.TH _PRINTF "18" "April 2022" "GNU coreutils 8.30" "User Commands"
+.SH NAME
+_printf \- format and print data
+.SH SYNOPSIS
+.B #include <stdio.h>
+.B int printf(const char *format, ...);
 
-NAME
-	_printf
-SYNOPSIS
-	#include "main.h"
+\fI\,FORMAT \/\fR[\fI\,ARGUMENT\/\fR]...
+.br
+.B printf
+\fI\,OPTION\/\fR
+.SH DESCRIPTION
+.\" Add any additional description here
+.PP
+.TP
+d, i
+.TP
+.PP
+The  int argument is converted to signed decimal notation.  The
+              precision, if any, gives the minimum number of digits that must
+              appear;  if  the  converted  value requires fewer digits, it is
+              padded on the left with zeros.  The  default  precision  is  1.
+              When  0  is printed with an explicit precision 0, the output is
+              empty.
+.TP
+.PP
+ s
+.TP
+.PP
+If  no  l modifier is present: the const char * argument is ex‐
+              pected to be a pointer to an array of character  type  (pointer
+              to a string).  Characters from the array are written up to (but
+              not including) a terminating null byte ('\0'); if  a  precision
+              is  specified,  no  more than the number specified are written.
+              If a precision is given, no null byte need be present;  if  the
+              precision  is not specified, or is greater than the size of the
+              array, the array must contain a terminating null byte.
 
-	int _printf(const char *format, ...);
 
-DESCRIPTION
-	The function _printf() displays output to the standard output stream 
-	according to a given format as outlined below.
+.pp
+Print ARGUMENT(s) according to FORMAT, or execute according to OPTION:
+.TP
+.PP
+FORMAT controls the output as in C printf.  Interpreted sequences are:
+.TP
+\n"
+new line
+.TP
+%%
+a single %
+.TP
+%s
+ARGUMENT as a string with '\e' escapes interpreted,
+except that octal escapes are of the form \e0 or \e0NNN
+.TP
+%q
+ARGUMENT is printed in a format that can be reused as shell input,
+escaping non\-printable characters with the proposed POSIX $'' syntax.
+.PP
+and all C format specifications ending with one of diouxXfeEgGcs, with
+ARGUMENTs converted to proper type first.  Variable widths are handled.
+.PP
+NOTE: your shell may have its own version of printf, which usually supersedes
+the version described here.  Please refer to your shell's documentation
+for details about the options it supports.
+.SH AUTHOR
+Written by Chinedu  Ezeanyim (Orji Prince as Collaborator)
+.SH "REPORTING BUGS"
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+.br
+Report printf translation bugs to <https://translationproject.org/team/>
+.SH COPYRIGHT
+Copyright \(co 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+.br
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+.SH "SEE ALSO"
+printf(3)
+.PP
+.br
+Full documentation at: <https://www.gnu.org/software/coreutils/printf>
+.br
+or available locally via: info \(aq(coreutils) printf invocation\(aq
 
-	The function basically writes using the write() function to output to the stdout.
-
-	The function is equivalent to printf() function as provided in the stdio.h library.
-	
-Format of the format string
-	The format string is a character string, enclosed within a double quote with a percentage
-	symbol directly before the string.
-
-d,s,i  The  int argument is converted to signed decimal notation.  The
-       precision, if any, gives the minimum number of digits that must
-       appear;  if  the  converted  value requires fewer digits, it is
-       padded on the left with zeros.  The  default  precision  is  1.
-       When  0  is printed with an explicit precision 0, the output is
-       empty. For the s argument the const char * argument is expected to be a pointe
-       to an array of character  type  (pointer to a string).
-
-
-	The syntax for the format string is:
-
-	"%[the format]"
-	%d:	Prints the decimal argument in the format.
-	%c:	Prints the character argument in the format.
-	%i:	Prints the integer argument in the format.
-
-Authors: Chinedu Ezeanyim and Orji Prince
-
-For bugs: see https://www.kernel.org/doc/man-pages/
