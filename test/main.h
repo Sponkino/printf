@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 /**
- * struct ch - struct ch
+ * struct ch -- struct ch
  * @str: pointer to string
  * @f: funtion pointer
  */
