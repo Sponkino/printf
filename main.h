@@ -21,6 +21,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int _strlen(char *c);
 int print_string(va_list s);
+int print_bin(va_list b);
 
 /*from specifer functions.c */
 int use_c(va_list arg);
