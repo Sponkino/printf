@@ -61,7 +61,7 @@ escaping non\-printable characters with the proposed POSIX $'' syntax.
 and all C format specifications ending with one of diouxXfeEgGcs, with
 ARGUMENTs converted to proper type first.  Variable widths are handled.
 .PP
-NOTE: your shell may have its own version of printf, which usually supersedes
+NOTE:  your shell may have its own version of printf, which usually supersedes
 the version described here.  Please refer to your shell's documentation
 for details about the options it supports.
 .SH AUTHOR
