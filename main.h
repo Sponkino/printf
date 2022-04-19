@@ -31,8 +31,8 @@ int use_i(va_list arg);
 
 typedef struct ch
 {
-                char *str;
-                        int (*f)(va_list);
+	char *str;
+		int (*f)(va_list);
 } chr_st;
 
 #endif
