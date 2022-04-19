@@ -80,7 +80,9 @@ There is NO WARRANTY, to the extent permitted by law.
 printf(3)
 .PP
 .br
+
 Full documentation at: <https://www.gnu.org/software/coreutils/printf>
+
 .br
 or available locally via: info \(aq(coreutils) printf invocation\(aq
 
